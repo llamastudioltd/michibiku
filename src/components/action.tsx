@@ -17,16 +17,10 @@ const actionVariants = cva(
         "sky": "bg-background-sky text-foreground-sky",
         "violet": "bg-background-violet text-foreground-violet",
         "yellow": "bg-background-yellow text-foreground-yellow",
-      },
-      size: {
-        "lg": "size-7",
-        "xl": "size-8",
-        "2xl": "size-9",
-      } 
+      }
     },
     defaultVariants: {
-      color: "neutral",
-      size: "lg",
+      color: "neutral"
     },
   }
 )
@@ -34,11 +28,10 @@ const actionVariants = cva(
 function Action({
   className,
   color,
-  size,
   ...props
 }) {
   return (
-    <div data-slot="action" className={ cn(actionVariants({ color, size, className })) } { ...props } />
+    <div data-slot="action" className={ cn(actionVariants({ color, className })) } { ...props } />
   );
 }
 

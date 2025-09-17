@@ -1,17 +1,22 @@
 @import "tailwindcss";
 
-@theme inline {
-  --text-2xs: 0.6875rem;
-  --text-2xs--line-height: 1rem;
+@font-face {
+  font-family: "inter-variable";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/inter-variable.woff2?v=4.1') format('woff2');
+}
 
-  --blur-low: var(--blur-lg);
-  --blur-default: var(--blur-xl);
-  --blur-high: var(--blur-2xl);
+@font-face {
+  font-family: "inter-variable";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/inter-variable-italic.woff2?v=4.1') format('woff2');
+}
 
-  --radius-low: 0.1875rem;
-  --radius-default: 0.375rem;
-  --radius-high: 0.75rem;
-
+:root {
   --color-background-default: var(--color-white);
   --color-background-neutral-strong: var(--color-neutral-200);
   --color-background-neutral: var(--color-neutral-100);
@@ -103,52 +108,31 @@
   --color-stroke-error: var(--color-red-600);
   --color-stroke-success: var(--color-amber-600);
   --color-stroke-warning: var(--color-teal-600);
+
+  --font-family-sans: "inter-variable", sans-serif;
+  --font-family-sans-display: "inter-variable", sans-serif;
 }
 
-.font-heading-1 {
-  @apply font-sans font-semibold text-2xl;
+.dark {
+  --color-background-default: var(--color-neutral-900);
 }
 
-.font-heading-2 {
-  @apply font-sans font-semibold text-xl;
+@theme {
+  --font-sans: var(--font-family-sans);
+  --font-sans-display: var(--font-family-sans-display);
+
+  --shadow-sm: 0 0.0625rem 0.125rem 0 --alpha(var(--color-background-neutral-reverse) / 4%);
+  --shadow-md: 0 0.5rem 0.5rem -0.5rem --alpha(var(--color-background-neutral-reverse) / 4%), 0 0.125rem 0.125rem 0 --alpha(var(--color-background-neutral-reverse) / 4%);
+  --shadow-lg: 0 0.5rem 1rem -0.25rem --alpha(var(--color-background-neutral-reverse) / 4%), 0 0.125rem 0.125rem 0 --alpha(var(--color-background-neutral-reverse) / 4%);
+
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
 }
 
-.font-heading-6 {
-  @apply font-sans font-medium text-2xs tracking-widest uppercase;
+@utility font-features-sans {
+  font-feature-settings: "cv01" on, "cv02" on, "cv03" on, "cv04" on, "cv05" on, "cv06" on, "cv07" on, "cv08" on, "cv09" on, "cv10" on, "cv11" on;
 }
 
-.font-body-1 {
-  @apply font-sans font-normal text-base;
-}
-
-.font-body-1-strong {
-  @apply font-sans font-medium text-base;
-}
-
-.font-body-1-stronger {
-  @apply font-sans font-semibold text-base;
-}
-
-.font-body-2 {
-  @apply font-sans font-normal text-sm;
-}
-
-.font-body-2-strong {
-  @apply font-sans font-medium text-sm;
-}
-
-.font-body-2-stronger {
-  @apply font-sans font-semibold text-sm;
-}
-
-.font-body-3 {
-  @apply font-sans font-normal text-xs;
-}
-
-.font-body-3-strong {
-  @apply font-sans font-medium text-xs;
-}
-
-.font-body-3-stronger {
-  @apply font-sans font-semibold text-xs;
+@utility font-features-sans-display {
+  font-feature-settings: "cv01" on, "cv02" on, "cv03" on, "cv04" on, "cv05" on, "cv06" on, "cv07" on, "cv08" on, "cv09" on, "cv10" on, "cv11" on;
 }

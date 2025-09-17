@@ -10,7 +10,7 @@ const navbarItemVariants = cva(
       color: {
         "neutral": "bg-(--color-background-neutral) text-(--color-foreground-neutral-weak)",
         "cyan": "bg-(--color-background-cyan) text-(--color-foreground-cyan)",
-        "indigo": "bg-(--color-background-indigo) text-(--color-foreground-indigo)",
+        "fuchsia": "bg-(--color-background-fuchsia) text-(--color-foreground-fuchsia)",
         "lime": "bg-(--color-background-lime) text-(--color-foreground-lime)",
         "pink": "bg-(--color-background-pink) text-(--color-foreground-pink)",
         "purple": "bg-(--color-background-purple) text-(--color-foreground-purple)",
@@ -25,13 +25,9 @@ const navbarItemVariants = cva(
   }
 )
 
-function NavbarItem({
-  className,
-  color,
-  ...props
-}) {
+function NavbarItem({ color, ...props }: React.ComponentProps<"div">) {
   return (
-    <div data-slot="action" className={ cn(navbarItemVariants({ color, className })) } { ...props } />
+    <div data-slot="navbar-item" className={ cn(navbarItemVariants({ color })) } { ...props } />
   );
 }
 
